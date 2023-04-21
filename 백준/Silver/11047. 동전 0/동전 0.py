@@ -11,11 +11,9 @@ for i in range(N):
 coin = sorted(coin, reverse=True)
 
 for i in coin:
-    if i > K:
-        continue
-    else:
-        while i <= K:
-            K -= i
-            cnt += 1
+    if K == 0:
+        break
+    cnt += K//i
+    K %= i
 
 print(cnt)
